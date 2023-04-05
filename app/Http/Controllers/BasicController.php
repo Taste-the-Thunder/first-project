@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class BasicController extends Controller
@@ -25,4 +26,14 @@ class BasicController extends Controller
     {
         return view('student');
     }
+    public function studentStore(Request $request)
+    {
+        Student::create([
+            'roll_no' => $request['roll_no'],
+            'name' => $request['name']
+        ]);
+
+        return view('student');
+    }
+
 }
