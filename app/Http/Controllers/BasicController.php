@@ -21,4 +21,8 @@ class BasicController extends Controller
     {
         return view('userinfo');
     }
+    public function student()
+    {
+        return view('student');
+    }
 }
