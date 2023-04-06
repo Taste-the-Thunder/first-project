@@ -5,8 +5,16 @@
 <h1>Students Form</h1><br>
 <form action="/student" method="POST">
     @csrf
-    <input type="text" name="roll_no" placeholder="roll_no"><br>
-    <input type="text" name="name" placeholder="name"><br>
+    <input type="text" name="roll_no" placeholder="roll_no" value="{{old('roll_no')}}">
+    @error('roll_no')
+        {{ $message }}
+    @enderror
+    <br>
+    <input type="text" name="name" placeholder="name" value="{{old('name')}}" >
+    @error('name')
+        {{ $message }}
+    @enderror
+    <br>
     <input type="submit" value="submit">
 </form>
 <br>

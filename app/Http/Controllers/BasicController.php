@@ -29,6 +29,11 @@ class BasicController extends Controller
     }
     public function studentStore(Request $request)
     {
+        $request->validate([
+            'roll_no' => 'required',
+            'name' => 'required|min:3',
+        ]);
+
         Student::create([
             'roll_no' => $request['roll_no'],
             'name' => $request['name']
