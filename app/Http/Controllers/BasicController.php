@@ -24,7 +24,8 @@ class BasicController extends Controller
     }
     public function student()
     {
-        return view('student');
+        $studentData = Student::all();
+        return view('student', compact('studentData'));
     }
     public function studentStore(Request $request)
     {
@@ -33,7 +34,10 @@ class BasicController extends Controller
             'name' => $request['name']
         ]);
 
-        return view('student');
+        return redirect('student');
+        // return $this->student();
+        // $studentData = Student::all();
+        // return view('student', compact('studentData'));
     }
 
 }

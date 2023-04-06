@@ -9,5 +9,10 @@
     <input type="text" name="name" placeholder="name"><br>
     <input type="submit" value="submit">
 </form>
+<br>
+
+@foreach ($studentData as $student)
+    {{ $student->roll_no }} {{ $student->name }} <br>
+@endforeach
 
 @endsection
