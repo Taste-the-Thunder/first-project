@@ -39,5 +39,12 @@ class BasicController extends Controller
         // $studentData = Student::all();
         // return view('student', compact('studentData'));
     }
+    public function studentDelete($id)
+    {
+        Student::where('id', $id)->delete();
+        // Student::where('id', '=', $id)->delete();
+
+        return redirect('student');
+    }
 
 }

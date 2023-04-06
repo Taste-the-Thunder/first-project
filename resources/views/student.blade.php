@@ -12,7 +12,13 @@
 <br>
 
 @foreach ($studentData as $student)
-    {{ $student->roll_no }} {{ $student->name }} <br>
+{{ $student->roll_no }} {{ $student->name }}
+    <form action="student/{{$student->id}}" method="POST">
+        @method('DELETE')
+        @csrf
+        <input type="submit" value="Delete">
+    </form>
+    <br>
 @endforeach
 
 @endsection
